@@ -1,0 +1,13 @@
+<div class="divCard">
+    <mat-card>
+        <div *ngFor="let boton of botones">
+            <button mat-raised-button color="primary" 
+            (click)="consultar(boton.ruta)">{{boton.texto}}</button>
+        </div>
+    </mat-card>
+</div>
+<div class="divCard">
+    <mat-card>
+        <label>{{response}}</label>
+    </mat-card>
+</div>
