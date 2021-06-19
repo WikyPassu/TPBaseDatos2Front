@@ -1,13 +1,22 @@
 <div class="divCard">
     <mat-card>
         <div *ngFor="let boton of botones">
-            <button mat-raised-button color="primary" 
+            <button class="boton" mat-raised-button color="primary" 
             (click)="consultar(boton.ruta)">{{boton.texto}}</button>
+            <div *ngIf="boton.visible" class="divCard">
+                <mat-card>
+                    <label>{{response}}</label>
+                </mat-card>
+            </div>
+            <div *ngFor="let botonito of boton.botonitos">
+                <button class="botonito" mat-button color="primary" 
+                (click)="consultar(botonito.ruta)">{{botonito.texto}}</button>
+                <div *ngIf="botonito.visible" class="divCard">
+                    <mat-card>
+                        <label>{{response}}</label>
+                    </mat-card>
+                </div>
+            </div>
         </div>
-    </mat-card>
-</div>
-<div class="divCard">
-    <mat-card>
-        <label>{{response}}</label>
     </mat-card>
 </div>
